@@ -4,21 +4,30 @@
   </button>
   <div class="collapse navbar-collapse d-flex justify-content-between mx-4" id="navbarTogglerDemo01">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-     
+    <li class="nav-item active">
+            <a class="nav-link" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
     </ul>
+
+    <style>
+      a
+      {
+        text-decoration: none;
+        color: white;
+      }
+    </style>
     <div class="d-flex justify-content-between">
-    <form class="form-inline my-2 my-lg-0" action="index.php" method="POST">
-      <button class="btn btn-success me-2 my-sm-0" type="submit" value="login">register</button>
-    </form>
-    <form class="form-inline my-2 my-lg-0" action="index.php" method="POST">
-      <button class="btn btn-primary my-2 my-sm-0" type="submit" value="login">Login</button>
-    </form>
+      <button class="btn btn-success me-2 my-sm-0" type="submit" name="register" value="register"><a href="index.php?action=register">Register</a></button>
+      <button class="btn btn-primary my-2 my-sm-0" type="submit" name="login" value="login"><a href="index.php?action=login">login</a></button>
     </div>
   </div>
 </nav>
