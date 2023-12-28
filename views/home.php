@@ -13,7 +13,7 @@
     include 'header.php';
   ?>
   <div class="text-center bg-image" style="
-      background-image: url('assets/img/event.jpg');
+      background-image: url('../assets/img/event.jpg');
       height: 100vh;
     ">
     <div class="mask h-100" style="background-color: rgba(0, 0, 0, 0.6);">

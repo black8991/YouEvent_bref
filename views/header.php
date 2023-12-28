@@ -26,8 +26,8 @@
       }
     </style>
     <div class="d-flex justify-content-between">
-      <button class="btn btn-success me-2 my-sm-0" type="submit" name="register" value="register"><a href="index.php?action=register">Register</a></button>
-      <button class="btn btn-primary my-2 my-sm-0" type="submit" name="login" value="login"><a href="index.php?action=login">login</a></button>
+      <button class="btn btn-success me-2 my-sm-0" type="submit" name="register" value="register"><a href="/register">Register</a></button>
+      <button class="btn btn-primary my-2 my-sm-0" type="submit" name="login" value="login"><a href="/login">login</a></button>
     </div>
   </div>
 </nav>
