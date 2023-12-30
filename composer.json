@@ -10,5 +10,7 @@
             "name": "osm ben"
         }
     ],
-    "require": {}
+    "require": {
+        "ext-pdo": "*"
+    }
 }

@@ -3,7 +3,7 @@
         'name' => 'osmben/you-event',
         'pretty_version' => 'dev-develop',
         'version' => 'dev-develop',
-        'reference' => 'fbc738c2938204b2746f5b95a51753a86f860b5c',
+        'reference' => '86b18082ad2d20fa4c5088ba951ceff4a4ccc247',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'osmben/you-event' => array(
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
-            'reference' => 'fbc738c2938204b2746f5b95a51753a86f860b5c',
+            'reference' => '86b18082ad2d20fa4c5088ba951ceff4a4ccc247',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

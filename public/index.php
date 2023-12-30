@@ -6,7 +6,6 @@
     use \app\core\Application;
 
     $app = new Application();
-
     $app->router->get('/','home');
 
     $app->router->get('/login', 'login');
