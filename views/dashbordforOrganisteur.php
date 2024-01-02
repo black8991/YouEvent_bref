@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+  <!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
    
-    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss-ui@0.1.0/dist/tailwind-ui.min.css" rel="stylesheet"> -->
+   <link href="https://cdn.jsdelivr.net/npm/tailwindcss-ui@0.1.0/dist/tailwind-ui.min.css" rel="stylesheet">
     <title>Dashboard</title>
 </head>
 <body class="flex items-center justify-center w-screen h-screen p-10 space-x-6 bg-gray-300">
 
 
-<!-- Component Start -->
+
 <div class="flex flex-col items-center w-16 h-full overflow-hidden text-gray-700 bg-gray-100 rounded">
     <a class="flex items-center justify-center mt-3" href="#">
         <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -64,9 +64,7 @@
         </svg>
     </a>
 </div>
-<!-- Component End  -->
 
-<!-- Component Start -->
 <div class="flex flex-col items-center w-40 h-full overflow-hidden text-gray-700 bg-gray-100 rounded">
     <a class="flex items-center w-full px-3 mt-3" href="#">
         <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -130,7 +128,6 @@
         <span class="ml-2 text-sm font-medium">Account</span>
     </a>
 </div>
-<!-- Component End  -->
 
 
 
@@ -432,7 +429,7 @@
         
     </div>
 </section>
-<!--//////////////////////////////////////////////////////-->
+
 <section class="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
     <h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">Account settings</h2>
 
@@ -463,4 +460,16 @@
             <button class="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
         </div>
     </form>
-</section>
+</section> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

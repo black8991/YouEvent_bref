@@ -8,22 +8,47 @@ class  EvenementsModel{
     private $description;
     private $imag;
 
-    public function __construct()
-    {  
-         #make conictin to database
+    private $db;
 
-         $database = new Database('localhost', 'database', 'root', '');
-           $pdo = $database->getPdo();
+    public function __construct() {
+        $this->db = new Database();
     }
-        
-   //function adding the event to table events by organisateur
+  
+    public function createUser($name,$location,$date,$escription,$imag)
+    {
+         $this->db->create("Eventment", ["name" => $name, "location" => $location,"date" => $date, "escription" => $escription,"imag"=>$imag]);
+    }
+  
+    public function readAllUsers() 
+    {
+        return $this->db->read("Eventment");
+    }
+  
+    public function modifierEvent($name,$location,$date,$escription,$imag,$id)
+    {
+        $this->db->update("Eventment",["name" => $name, "location" => $location,"date" => $date, "escription" => $escription,"imag"=>$imag], "id=$id");
+    }
+    public function deletEvent($id)
+    {
+      $this->db->delete("Eventment", "id=$id");
+    }
+
+
+
+     /*   #make conictin to database
+         private $db;
+         public function __construct() {
+             $this->db = new Database();
+         }
+         
+  #function adding the event to table events by organisateur
    # input the function this argiment name,location,date,descriptioon,imag;
 
     public function AjouterEvent($name, $location, $date, $description, $imag)
     {
      
          #make varbele for query of insert
-        $insert = "INSERT INTO Tickets (name, location, date, description, imag) VALUES (:name, :location, :date, :description, :imag)";
+        $insert = "INSERT INTO Eventment (name, location, date, description, imag) VALUES (:name, :location, :date, :description, :imag)";
         #pase the valeus to preper function
         $query = $pdo->prepare($insert);
         #bind parameters to the values
@@ -41,7 +66,7 @@ class  EvenementsModel{
    {
        
         #make varbele for query of delete
-       $delete = "DELETE FROM Tickets WHERE id = :id";
+       $delete = "DELETE FROM Eventment WHERE id = :id";
          #pase the valeus to preper function
        $statement = $pdo->prepare($delete);
          #bind parameters to the values
@@ -54,7 +79,7 @@ class  EvenementsModel{
    {
       
            #make varbele for query of update
-       $update = "UPDATE Tickets SET name = :name, location = :location, date = :date, description = :description, imag = :imag WHERE id = :id";
+       $update = "UPDATE Eventment SET name = :name, location = :location, date = :date, description = :description, imag = :imag WHERE id = :id";
          #pase the valeus to preper function
        $statement = $pdo->prepare($update);
           #bind parameters to the values
@@ -79,7 +104,10 @@ class  EvenementsModel{
        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
          #return the array
        return $result;
-   }
+   }*/
   
 
 }
+
+
+
