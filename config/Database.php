@@ -19,7 +19,7 @@ namespace app\config;
 
 class Database
 {
-    private \PDO $connect;
+    private  $connect;
     private $stml;
 
     public function __construct($db_host = 'localhost', $db_user = 'root', $db_pass = '', $db_name = 'youevent')
@@ -27,12 +27,13 @@ class Database
         try {
             $dsn = "mysql:host={$db_host};dbname={$db_name}";
             $this->connect = new \PDO($dsn, $db_user, $db_pass);
-            echo "wohooooooooo it works" ;
+            // echo "wohooooooooo it works"; // Consider removing or using it for debugging only
         } catch (\PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
             die();
         }
     }
+
 
     //function to prepare queries
     public function query($sql)
