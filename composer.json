@@ -1,0 +1,14 @@
+{
+    "name": "youcode/you-event_bref",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "zzzzzz squad"
+        }
+    ],
+    "require": {}
+}
