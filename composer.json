@@ -1,5 +1,5 @@
 {
-    "name": "youcode/you-event_bref",
+    "name": "osmben/you-event",
     "autoload": {
         "psr-4": {
             "app\\": "./"
@@ -10,5 +10,7 @@
             "name": "zzzzzz squad"
         }
     ],
-    "require": {}
+    "require": {
+        "ext-pdo": "*"
+    }
 }
