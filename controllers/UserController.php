@@ -25,6 +25,7 @@ class UserController
 
     public function register()
     {
+
         $this->router->renderView("register");
     }
 
@@ -35,9 +36,26 @@ class UserController
 
     public function showData()
     {
-        $users =  $this->userModel->getUsers();
-
-
+        $users = $this->userModel->getUsers();
+        if ($users) {
+            return $this->router->renderView("home", ['users' => $users]);
+        } else {
+            return false;
+        }
     }
+    	
+    public function showDetails(){
+      
+        $eventDetails = $this->userModel->getEventDetails($_GET['id']);
+        
+        if ($eventDetails) {
+            return $this->router->renderView("details", ['eventDetails' => $eventDetails]);
+
+        } else {
+            return $this->router->renderView("not-found");
+        }
+    }
+    
+
 
 }
