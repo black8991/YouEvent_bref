@@ -1,10 +1,13 @@
+CREATE DATABASE youevent_bref;
 CREATE TABLE Eventment(
     id_event INT PRIMARY KEY AUTO_INCREMENT,
     name varchar(225),
     location varchar(225),
     date TIME,
-    description varchar(225),
-    image varchar(225)
+    description TEXT,
+    image blob,
+    video blob,
+    category varchar(225)
 );
 
 CREATE TABLE role(
@@ -48,9 +51,12 @@ CREATE TABLE typeTickets(
 CREATE TABLE items(
     id_item INT PRIMARY KEY AUTO_INCREMENT,
     id_res INT,
+    quantity int,
     id_ticket INT,
     FOREIGN KEY (id_res) REFERENCES reservation (id_reservation),
     FOREIGN KEY (id_ticket) REFERENCES typeTickets (id_typeTickets)
 );
+
+
 
 
