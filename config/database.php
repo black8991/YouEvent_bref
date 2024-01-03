@@ -44,6 +44,7 @@ class Database
 
     public function singleAll()
     {
+ 
         $this->execute();//excute the query after
         return $this->stml->fetchAll();
     }
