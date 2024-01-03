@@ -24,7 +24,6 @@ class UserModel
             return false;
     }
 
-
     public function getEventDetails($id)
     {
         $stmt = $this->database->prepare("SELECT

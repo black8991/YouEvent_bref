@@ -161,7 +161,7 @@
 }
 </style>
 
-<div class="container bootdey">
+<div class="container bootdey my-5">
 <div class="col-md-12">
 <section class="panel">
       <div class="row">
@@ -188,33 +188,32 @@
                                 
             <?php
                 if (!empty($eventDetails)) {
-                    foreach ($eventDetails as $eventDetail) {
                         echo "
                             <div class='col-md-6'>
                                 <h1 class='pro-d-title'>
-                                    " . $eventDetail->event_name . "
+                                    " . $eventDetails->event_name . "
                                 </h1>
                                 <p>
-                                    " . $eventDetail->description . "
+                                    " . $eventDetails->description . "
                                 </p>
                                 <div class='product_meta'>
                                     <span class='posted_in'>
-                                        <strong>Location:</strong> " . $eventDetail->location . "
+                                        <strong>Location:</strong> " . $eventDetails->location . "
                                     </span>
                                     <span class='tagged_as'>
-                                        <strong>Date:</strong> " . $eventDetail->date . "
+                                        <strong>Date:</strong> " . $eventDetails->date . "
                                     </span>
                                 </div>
 
                                 <div class='m-bot15'>
                                     <strong>Price Of Tickets : </strong>
-                                    <span class='pro-price'>" . $eventDetail->ticket_price . "</span>
+                                    <span class='pro-price'>" . $eventDetails->ticket_price . "</span>
                                 </div>
                                 <div class='m-bot15'>
                                     <strong>Type Of Tickets : </strong>
                                     <select id='ticketType'>
-                                        <option id='vip' selected value='" . $eventDetail->ticket_price . "'>vip</option>
-                                        <option id='basic' value='" . $eventDetail->ticket_price . "'>basic</option>
+                                        <option id='vip' selected value='" . $eventDetails->ticket_price . "'>vip</option>
+                                        <option id='basic' value='" . $eventDetails->ticket_price . "'>basic</option>
                                     </select>
                                 </div>
                                 <div class='form-group my-2'>
@@ -222,14 +221,13 @@
                                     <input type='quantiy' value='1' class='form-control quantity'>
                                 </div>
                                 <p>
-                                    <button class='btn btn-round btn-danger' type='button'>
-                                        <i class='fa fa-shopping-cart'></i> Add to Cart
+                                    <button class='btn btn-round btn-danger' type='button' id='id_reservation' value='reserve'>
+                                        <i class='fa fa-shopping-cart'></i> reserve
                                     </button>
                                 </p>
                             </div>
                         ";
                     }
-                }
             ?>
       </div>
   </section>
@@ -251,5 +249,12 @@
                 proPrice.textContent = basic.value; // Adjust the value accordingly
             }
         });
+
+
+        let id_reservation = document.querySelector('#id_reservation');
+        id_reservation.addEventListener("click", function() {
+            console.log('asd');
+            alert('saved');
+        })
         
     </script>

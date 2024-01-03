@@ -18,7 +18,6 @@ use app\core\Application;
     $app->router->get('/details', [UserController::class, 'showDetails']);
     // $app->router->get('/details', 'details');
 
-
     $app->router->get('/register','register');
     $app->router->post('/register', [UserController::class, 'register']);
 
