@@ -4,6 +4,7 @@
 session_start();
 
 use app\controllers\UserController;
+use app\controllers\AdminController;
 use app\core\Application;
 use app\Router;
 
@@ -22,8 +23,8 @@ use app\Router;
     $app->router->get('/register','register');
     $app->router->post('/register', [UserController::class, 'register']);
 
-    $app ->router->post('/admin', [new AdminController(), 'admin']);
-    $app ->router->post('/admin', [new AdminController(), 'admin']);
+    $app ->router->post('/admin', [AdminController::class, 'admin']);
+    $app ->router->get('/admin', [AdminController::class, 'admin']);
 
 
 
