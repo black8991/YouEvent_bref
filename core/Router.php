@@ -2,6 +2,7 @@
 
 namespace app\core;
 
+
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
@@ -59,7 +60,8 @@ class Router
                 $method = $callback[1];
 
                 $id = $this->extractIdFromPath($path);
-                return call_user_func([$controller, $method], $id);
+                return call_user_func([$controller, $method]);
+
             }
         
             return call_user_func($callback);
@@ -80,6 +82,21 @@ class Router
         $layoutContent = $this->layoutContent();
         $viewContent =  $this->renderOnlyView($view, $variables);
         return str_replace("{{content}}", $viewContent, $layoutContent);
+    }
+
+    public function renderViewAuth($view)
+    {
+        $layoutContent = $this->layoutContent();
+        $viewContent =  $this->renderOnlyViewAuth($view);
+        return str_replace("{{content}}", $viewContent, $layoutContent);
+    }
+
+    protected function renderOnlyViewAuth($view)
+    {
+
+        ob_start();
+        require_once Application::$ROOT_DIR."/views/$view.php";
+        return ob_get_clean();
     }
 
     protected function renderOnlyView($view, $variables = [])

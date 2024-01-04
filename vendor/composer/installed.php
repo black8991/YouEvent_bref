@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => 'osmben/you-event',
+        'name' => 'oussama/you-event_bref',
         'pretty_version' => 'dev-develop',
         'version' => 'dev-develop',
-        'reference' => '86b18082ad2d20fa4c5088ba951ceff4a4ccc247',
+        'reference' => '5d7f73c9fc4357285fba74baaa25062d77829412',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'osmben/you-event' => array(
+        'oussama/you-event_bref' => array(
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
-            'reference' => '86b18082ad2d20fa4c5088ba951ceff4a4ccc247',
+            'reference' => '5d7f73c9fc4357285fba74baaa25062d77829412',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

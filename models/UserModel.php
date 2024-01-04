@@ -2,10 +2,14 @@
 
 namespace app\models;
 use app\config\Database;
-
 class UserModel
 {
-    private Database $database;
+    public int $id_user ;
+    public string $fullName= '';
+    public string $email =  '';
+    public string $phone = '';
+    public string $password = '';
+    protected Database $database;
     public function __construct()
     {
         $this->database = new Database();
@@ -14,6 +18,7 @@ class UserModel
     {
         $stmt = $this->database->prepare("SELECT * FROM Eventment");
         $stmt->execute();
+
         $users = $stmt->fetchAll(\PDO::FETCH_OBJ); 
        
         if($users)
@@ -22,7 +27,9 @@ class UserModel
         }
         else
             return false;
+          
     }
+
 
     public function getEventDetails($id)
     {
@@ -53,16 +60,6 @@ class UserModel
         }
         else
             return false;
-    }
-
-    public function RegisterUser($table, $attributes, $values)
-    {
-        $newAtt = implode(',', $attributes);
-        $newVal = implode("','", $values);
-        $register = "INSERT INTO {$table} ({$newAtt}) VALUES ('{$newVal}')";
-        $stmt = $this->database->prepare($register);
-        $stmt->execute();
-        return $stmt;
     }
 
 }
