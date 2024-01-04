@@ -11,5 +11,7 @@
             "email": "freegiftcardishere@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "ext-pdo": "*"
+    }
 }

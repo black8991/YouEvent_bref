@@ -24,10 +24,7 @@ class UserController
     }
 
 
-    public function login(): string
-    {
-        return "handling submitted data";
-    }
+
 
     public function showData()
     {

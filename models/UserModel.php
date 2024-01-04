@@ -9,7 +9,7 @@ class UserModel
     public string $email =  '';
     public string $phone = '';
     public string $password = '';
-    private Database $database;
+    protected Database $database;
     public function __construct()
     {
         $this->database = new Database();

@@ -3,7 +3,7 @@
         'name' => 'oussama/you-event_bref',
         'pretty_version' => 'dev-develop',
         'version' => 'dev-develop',
-        'reference' => '78b52b4dcc1e47f3ec5593069a2c42b1f90d3397',
+        'reference' => '5d7f73c9fc4357285fba74baaa25062d77829412',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'oussama/you-event_bref' => array(
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
-            'reference' => '78b52b4dcc1e47f3ec5593069a2c42b1f90d3397',
+            'reference' => '5d7f73c9fc4357285fba74baaa25062d77829412',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
