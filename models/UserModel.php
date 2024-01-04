@@ -29,29 +29,7 @@ class UserModel
             return false;
           
     }
- 
-    public function creatAcount()
-    {
-        $sql = "INSERT INTO `users` (`fullName`,`email`,`phone`,`password`) VALUES (?, ?, ?, ?)";
-        $conn = $this->connect->getConnection();
-    
-        try {
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(1, $this.fullName, PDO::PARAM_STR);
-            $stmt->bindParam(2, $this.email, PDO::PARAM_STR);
-            $stmt->bindParam(3, $this.phone, PDO::PARAM_STR);
-            $stmt->bindParam(4, $this.password, PDO::PARAM_STR);
-            $stmt->execute();
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-        } finally {
-            $stmt->closeCursor();
-            $conn = null;
-        }
-        
-    }
 
-    
 
     public function getEventDetails($id)
     {
@@ -82,16 +60,6 @@ class UserModel
         }
         else
             return false;
-    }
-
-    public function RegisterUser($table, $attributes, $values)
-    {
-        $newAtt = implode(',', $attributes);
-        $newVal = implode("','", $values);
-        $register = "INSERT INTO {$table} ({$newAtt}) VALUES ('{$newVal}')";
-        $stmt = $this->database->prepare($register);
-        $stmt->execute();
-        return $stmt;
     }
 
 }
