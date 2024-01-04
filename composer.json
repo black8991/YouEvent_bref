@@ -1,5 +1,5 @@
 {
-    "name": "osmben/you-event",
+    "name": "youcode/youevent",
     "autoload": {
         "psr-4": {
             "app\\": "./"
@@ -7,7 +7,7 @@
     },
     "authors": [
         {
-            "name": "osm ben"
+            "name": "zzzzzz squad"
         }
     ],
     "require": {
