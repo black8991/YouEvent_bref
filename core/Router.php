@@ -36,26 +36,54 @@ class Router
         $this->routes['get'][$path] = $callback;
     }
 
+    public function post($path, $callback)
+    {
+        //block of code here
+        $this->routes['post'][$path] = $callback;
+    }
     public function resolve()
     {
         $path = $this->request->getPath();
         $method = $this->request->getMethod();
         $callback = $this->routes[$method][$path] ?? false;
-        if(!$callback){
-            return "Page Not Fount";
-            //redirect to the 404 page
+
+        if (!$callback) {
+            return $this->renderView(404);
         }
-        if(is_string($callback))
-        {
+
+        if (is_string($callback)) {
             return $this->renderView($callback);
         }
-        //but if it exist we should return that callback function
-        //for that we can use the already built in function call user func that takes out callback
+
+        if (is_array($callback)) {
+            // Check if it's an array [controller, method]
+            $controller = new $callback[0]();
+            $method = $callback[1];
+            return call_user_func([$controller, $method]);
+        }
+
         return call_user_func($callback);
     }
 
     public function renderView($view)
     {
-        require_once __DIR__ ."/../views/$view.php";
+        $layoutContent = $this->layoutContent();
+        $viewContent =  $this->renderOnlyView($view);
+        return str_replace("{{content}}",$viewContent ,$layoutContent);
     }
+
+    protected function layoutContent()
+    {
+        ob_start();
+        require_once Application::$ROOT_DIR."/views/layout/main.php";
+        return ob_get_clean();
+    }
+
+    protected function renderOnlyView($view)
+    {
+        ob_start();
+        require_once Application::$ROOT_DIR."/views/$view.php";
+        return ob_get_clean();
+    }
+
 }
