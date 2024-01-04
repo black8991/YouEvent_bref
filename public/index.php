@@ -3,7 +3,7 @@
     require_once __DIR__ . '/../vendor/autoload.php';
 session_start();
 
-use app\contollers\AdminController;
+use app\controllers\AdminController;
 use app\controllers\Autentification;
 use app\controllers\UserController;
 use app\core\Application;
@@ -20,6 +20,7 @@ use app\core\Application;
 
     $app->router->get('/register','register');
     $app->router->post('/register', [Autentification::class, 'register']);
+
 
     $app ->router->get('/admin', [AdminController::class, 'admin']);
     $app ->router->post('/admin', [AdminController::class, 'admin']);
