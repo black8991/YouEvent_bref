@@ -7,7 +7,6 @@ use app\controllers\UserController;
 use app\core\Application;
 
 
-
 // dirname(__DIR__)  this is to grap the root path in order to acces to view absolutly
     $app = new Application(dirname(__DIR__));
     $app->router->get('/','home');
