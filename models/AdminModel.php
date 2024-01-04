@@ -4,11 +4,15 @@ use app\config\Database;
 use PDO;
 
 
-class AdminModel extends UserModel{
+class AdminModel {
+    private Database $database;
+    public function __construct()
+    {
+        $this->database = new Database();
+    }
 
-    public function showUsers($table, $attributes){
-        $arrtimploded= implode(",",$attributes );
-        $showrequete= $this->conndb->prepare("select {$arrtimploded} from {$table}");
+    public function showUsers($table){
+        $showrequete= $this->database->prepare("select * from (`{$table}`)");
         $showrequete->execute();
         $data = $showrequete->fetchAll();
         return $data;
