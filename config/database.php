@@ -22,7 +22,7 @@ class Database
     private  $connect;
     private $stml;
 
-    public function __construct($db_host = 'localhost', $db_user = 'root', $db_pass = '', $db_name = 'youevent_bref')
+    public function __construct($db_host = 'localhost', $db_user = 'root', $db_pass = '', $db_name = 'youevent')
     {
         try {
             $dsn = "mysql:host={$db_host};dbname={$db_name}";
