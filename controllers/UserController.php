@@ -25,8 +25,20 @@ class UserController
 
     public function register()
     {
+        $data = [
+            'fullname' => trim($_POST['fullname']),
+            'email' => trim($_POST['email']),
+            'phone' => trim($_POST['phone']),
+            'password' => trim($_POST['password']),
+            'passwordConfirm' => trim($_POST['passwordConfirmation'])
+        ];
 
-        $this->router->renderView("register");
+        if(!empty($data['fullname']) && !empty($data['email']) && !empty($data['phone'])
+            && !empty($data['password']) && !empty($data['passwordConfirm']) )
+        {
+            $res = $this->userModel->RegisterUser("users", ['fullName', 'email', 'phone', 'password'], [$data['fullname'], $data['email'], $data['phone'], $data['password']]);
+            $this->router->renderView("home", ['res' => $res]);
+        }
     }
 
     public function login(): string

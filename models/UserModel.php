@@ -54,4 +54,15 @@ class UserModel
         else
             return false;
     }
+
+    public function RegisterUser($table, $attributes, $values)
+    {
+        $newAtt = implode(',', $attributes);
+        $newVal = implode("','", $values);
+        $register = "INSERT INTO {$table} ({$newAtt}) VALUES ('{$newVal}')";
+        $stmt = $this->database->prepare($register);
+        $stmt->execute();
+        return $stmt;
+    }
+
 }

@@ -82,14 +82,14 @@ class Router
         return str_replace("{{content}}", $viewContent, $layoutContent);
     }
 
-        protected function renderOnlyView($view, $variables = [])
-        {
-            extract($variables);
+    protected function renderOnlyView($view, $variables = [])
+    {
+        extract($variables);
 
-            ob_start();
-            require_once Application::$ROOT_DIR."/views/$view.php";
-            return ob_get_clean();
-        }
+        ob_start();
+        require_once Application::$ROOT_DIR."/views/$view.php";
+        return ob_get_clean();
+    }
 
 
     protected function layoutContent()

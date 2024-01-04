@@ -9,20 +9,6 @@
     box-shadow: none;
 }
 
-.panel-heading {
-    border-color:#eff2f7 ;
-    font-size: 16px;
-    font-weight: 300;
-}
-
-.panel-title {
-    color: #2A3542;
-    font-size: 14px;
-    font-weight: 400;
-    margin-bottom: 0;
-    margin-top: 0;
-    font-family: 'Open Sans', sans-serif;
-}
 
 /*product list*/
 
@@ -235,26 +221,28 @@
   </div>
 
     <script>
-        let ticketTypeSelect = document.querySelector("#ticketType");
-        let proPrice = document.querySelector(".pro-price");
-        let vip = document.querySelector("#vip");
-        let basic = document.querySelector("#basic");
-        console.log(basic.value);
+        // let ticketTypeSelect = document.querySelector("#ticketType");
+        // let proPrice = document.querySelector(".pro-price");
+        // let vip = document.querySelector("#vip");
+        // let basic = document.querySelector("#basic");
+        // console.log(basic.value);
+        //
+        // ticketTypeSelect.addEventListener("change", function() {
+        //     let selectedValue = ticketTypeSelect.value;
+        //     if (selectedValue === "vip") {
+        //         proPrice.textContent = vip.value; // Adjust the value accordingly
+        //     } else if (selectedValue === "basic") {
+        //         proPrice.textContent = basic.value; // Adjust the value accordingly
+        //     }
+        // });
 
-        ticketTypeSelect.addEventListener("change", function() {
-            let selectedValue = ticketTypeSelect.value;
-            if (selectedValue === "vip") {
-                proPrice.textContent = vip.value; // Adjust the value accordingly
-            } else if (selectedValue === "basic") {
-                proPrice.textContent = basic.value; // Adjust the value accordingly
-            }
-        });
+
 
 
         let id_reservation = document.querySelector('#id_reservation');
         id_reservation.addEventListener("click", function() {
-            console.log('asd');
-            alert('saved');
+            alert('You Should Login First');
+            window.location.href = '/login';
         })
         
     </script>
