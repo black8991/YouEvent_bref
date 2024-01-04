@@ -1,11 +1,11 @@
 <?php
-namespace app\contollers;
+namespace app\controllers;
 use app\core\Application;
 use app\core\Request;
 use app\core\Router;
 use app\models\LoginModel;
 
-class AutentificationController{
+class Autentification{
 
     public function regester(){
     

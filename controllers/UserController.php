@@ -29,12 +29,14 @@ class UserController
         return "handling submitted data";
     }
 
-
     public function showData()
     {
-        $users =  $this->userModel->getUsers();
-        
-
+        $users = $this->userModel->getUsers();
+        if ($users) {
+            return $this->router->renderView("home", ['users' => $users]);
+        } else {
+            return false;
+        }
     }
     	
     public function showDetails(){

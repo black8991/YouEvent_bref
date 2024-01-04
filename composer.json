@@ -1,5 +1,5 @@
 {
-    "name": "youcode/youevent",
+    "name": "oussama/you-event_bref",
     "autoload": {
         "psr-4": {
             "app\\": "./"
@@ -7,10 +7,9 @@
     },
     "authors": [
         {
-            "name": "zzzzzz squad"
+            "name": "oussama",
+            "email": "freegiftcardishere@gmail.com"
         }
     ],
-    "require": {
-        "ext-pdo": "*"
-    }
+    "require": {}
 }
