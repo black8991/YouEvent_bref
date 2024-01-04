@@ -4,10 +4,8 @@
 session_start();
 
 use app\controllers\UserController;
-
-    use app\core\Application;
-
-    $app = new Application();
+use app\core\Application;
+use app\Router;
 
 
 // dirname(__DIR__)  this is to grap the root path in order to acces to view absolutly
@@ -22,6 +20,13 @@ use app\controllers\UserController;
 
     $app->router->get('/register','register');
     $app->router->post('/register', [UserController::class, 'register']);
+
+    $app ->router->post('/admin', [new AdminController(), 'admin']);
+    $app ->router->post('/admin', [new AdminController(), 'admin']);
+
+
+
+
 
 
     // get is a method inside of router that checks what is after /

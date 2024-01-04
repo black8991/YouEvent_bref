@@ -48,12 +48,18 @@ class UserController
 
     public function showData()
     {
+<<<<<<< HEAD
         $users = $this->userModel->getUsers();
         if ($users) {
             return $this->router->renderView("home", ['users' => $users]);
         } else {
             return false;
         }
+=======
+        $users =  $this->userModel->getUsers();
+        
+
+>>>>>>> 686ab6fedf9fec0560e5ebde0485c6eb5fc391bf
     }
     	
     public function showDetails(){
@@ -68,6 +74,7 @@ class UserController
         }
     }
     
+
 
 
 }
