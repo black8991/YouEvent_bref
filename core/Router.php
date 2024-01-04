@@ -2,6 +2,8 @@
 
 namespace app\core;
 
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 
 class Router
 {
@@ -40,14 +42,20 @@ class Router
         $method = $this->request->getMethod();
         $callback = $this->routes[$method][$path] ?? false;
         if(!$callback){
-            echo "Page Not Fount";
-            exit;
+            return "Page Not Fount";
             //redirect to the 404 page
         }
-
+        if(is_string($callback))
+        {
+            return $this->renderView($callback);
+        }
         //but if it exist we should return that callback function
         //for that we can use the already built in function call user func that takes out callback
-        echo call_user_func($callback);
+        return call_user_func($callback);
+    }
 
+    public function renderView($view)
+    {
+        require_once __DIR__ ."/../views/$view.php";
     }
 }
