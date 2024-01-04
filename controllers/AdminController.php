@@ -8,7 +8,10 @@ class AdminController{
     public function __construct(){
         $this->admin_controller= new AdminModel;
     }
-    
+    public function admin(){
+        $listofusers = $this->AdminModel->showUsers;
+    }
+
 
 }
 
