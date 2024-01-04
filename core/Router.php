@@ -2,6 +2,8 @@
 
 namespace app\core;
 
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 
 class Router
 {
@@ -34,20 +36,67 @@ class Router
         $this->routes['get'][$path] = $callback;
     }
 
+    public function post($path, $callback)
+    {
+        //block of code here
+        $this->routes['post'][$path] = $callback;
+    }
     public function resolve()
     {
+        
         $path = $this->request->getPath();
         $method = $this->request->getMethod();
+
         $callback = $this->routes[$method][$path] ?? false;
-        if(!$callback){
-            echo "Page Not Fount";
-            exit;
-            //redirect to the 404 page
+        
+        if ($callback) {
+            if (is_string($callback)) {
+                return $this->renderView($callback);
+            }
+        
+            if (is_array($callback)) {
+                $controller = new $callback[0]();
+                $method = $callback[1];
+
+                $id = $this->extractIdFromPath($path);
+                return call_user_func([$controller, $method], $id);
+            }
+        
+            return call_user_func($callback);
         }
-
-        //but if it exist we should return that callback function
-        //for that we can use the already built in function call user func that takes out callback
-        echo call_user_func($callback);
-
+        
+        // Handle the case when the route is not found
+        return $this->renderView(404);
     }
+
+    public function extractIdFromPath($path)
+    {
+        $id = explode('/',$path);
+        return isset($id[2]) ? $id[2] : null;
+    }
+
+    public function renderView($view, $variables = [])
+    {
+        $layoutContent = $this->layoutContent();
+        $viewContent =  $this->renderOnlyView($view, $variables);
+        return str_replace("{{content}}", $viewContent, $layoutContent);
+    }
+
+    protected function renderOnlyView($view, $variables = [])
+    {
+        extract($variables);
+
+        ob_start();
+        require_once Application::$ROOT_DIR."/views/$view.php";
+        return ob_get_clean();
+    }
+
+
+    protected function layoutContent()
+    {
+        ob_start();
+        require_once Application::$ROOT_DIR."/views/layout/main.php";
+        return ob_get_clean();
+    }
+
 }
