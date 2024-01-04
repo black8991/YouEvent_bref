@@ -37,7 +37,6 @@ class UserController
             && !empty($data['password']) && !empty($data['passwordConfirm']) )
         {
             $res = $this->userModel->RegisterUser("users", ['fullName', 'email', 'phone', 'password'], [$data['fullname'], $data['email'], $data['phone'], $data['password']]);
-            $this->router->renderView("home", ['res' => $res]);
         }
     }
 
