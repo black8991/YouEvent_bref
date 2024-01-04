@@ -11,18 +11,28 @@ class Autentification extends  UserController {
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
-            $fullName = $_POST['fullname'];
-            $email = $_POST['email'];
-            $phone = $_POST['phone'];
-            $password = $_POST['password'];
-            $fullName = $this->validation($fullName);
-            $email = $this->validation($email);
-            $phone = $this->validation($phone);
-            $password = password_hash($password, PASSWORD_DEFAULT);
-            $user = new LoginModel();
-            $user->creatAcount($fullName, $email, $phone, $password);
+            if(!empty($_POST['fullname']) && !empty($_POST['email']))
+            {
+                
+                $fullName = $_POST['fullname'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $password = $_POST['password'];
+                $fullName = $this->validation($fullName);
+                $email = $this->validation($email);
+                $phone = $this->validation($phone);
+                $password = password_hash($password, PASSWORD_DEFAULT);
+                $user = new LoginModel();
+                $res = $user->creatAcount($fullName, $email, $phone, $password);
+                return $this->router->renderView("login", ['user' => $res]);
+            }
+            else
+            {
+                echo "<p class='alert alert-danger'>There was an error</p>";
+                return $this->router->renderView("register");
+
+            }
         }
-        $this->router->renderViewAuth("login");
     }
 
 
@@ -49,6 +59,7 @@ class Autentification extends  UserController {
         $data = trim($data);
         $data = htmlspecialchars($data);
         $data = addslashes($data);
+
         return $data;
     }
 }

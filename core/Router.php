@@ -84,21 +84,6 @@ class Router
         return str_replace("{{content}}", $viewContent, $layoutContent);
     }
 
-    public function renderViewAuth($view)
-    {
-        $layoutContent = $this->layoutContent();
-        $viewContent =  $this->renderOnlyViewAuth($view);
-        return str_replace("{{content}}", $viewContent, $layoutContent);
-    }
-
-    protected function renderOnlyViewAuth($view)
-    {
-
-        ob_start();
-        require_once Application::$ROOT_DIR."/views/$view.php";
-        return ob_get_clean();
-    }
-
     protected function renderOnlyView($view, $variables = [])
     {
         extract($variables);
