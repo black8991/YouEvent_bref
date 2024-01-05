@@ -15,6 +15,7 @@ use app\core\Application;
 
     $app->router->post('/details', [UserController::class, 'showDetails']);
 
+
     // $app->router->get('/details', 'details');
 
     // auth routers
