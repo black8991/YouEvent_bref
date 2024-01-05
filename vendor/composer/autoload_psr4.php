@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Youcode\\Youevent\\' => array($baseDir . '/src'),
+    'app\\' => array($baseDir . '/'),
 );

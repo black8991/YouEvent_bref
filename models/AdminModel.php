@@ -17,8 +17,8 @@ class AdminModel {
         $data = $showrequete->fetchAll();
         return $data;
  }
-     public function delete($table, $condition){
-        $deleterequete= $this->conndb->prepare("DELETE FROM {$table} WHERE {$condition}");
+     public function delete($table, $id){
+        $deleterequete= $this->conndb->prepare("DELETE FROM {$table} WHERE id= :id");
         $deleterequete->execute();
      }
 

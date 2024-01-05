@@ -35,8 +35,10 @@
         <td><?= $user['phone'] ?></td>
         <td><?= $user['id_role'] ?></td>
         <td>
-        <a href=""><i class="fa-solid fa-pen text-dark"></i></a>
-        <a href=""><i class="fa-solid fa-trash text-dark me-3"></i></a>
+        
+        <a ><i class="fa-solid fa-pen text-dark"></i></a>
+        <form action="">
+        <a href=""><i class="fa-solid fa-trash text-dark me-3"></i></a> </form>
 
         </td>
 
