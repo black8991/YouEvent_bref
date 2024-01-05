@@ -18,6 +18,7 @@ use app\core\Application;
 
     // $app->router->get('/details', 'details');
 
+
     // auth routers
     $app->router->get('/register','register');
     $app->router->post('/register', [Autentification::class, 'register']);
