@@ -23,8 +23,8 @@ class Autentification extends  UserController {
                 $phone = $this->validation($phone);
                 $password = password_hash($password, PASSWORD_DEFAULT);
                 $user = new LoginModel();
-                $res = $user->creatAcount($fullName, $email, $phone, $password);
-                return $this->router->renderView("login", ['user' => $res]);
+                $user->creatAcount($fullName, $email, $phone, $password);
+                $this->router->redirect("/login");
             }
             else
             {
@@ -40,19 +40,30 @@ class Autentification extends  UserController {
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST')
         {
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $email = $this->validation($email);
-            $password = $this->validation($password);
-            $user = new LoginModel();
-            $res = $user->findAcount($email, $password);
-            var_dump($res);
+            if(!empty($_POST['email']) && !empty($_POST['password']))
+            {
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                $email = $this->validation($email);
+                $password = $this->validation($password);
+                $user = new LoginModel();
+                $res = $user->findAcount($email, $password);
 
+                if($res == "Admin")
+                {
+                    $this->router->redirect("admin");
+                }
+                else
+                {
+                   return "You Are Not Allowed";
+                }
+            }else
+            {
+                echo "<p class='alert alert-danger'>There was an error</p>";
+                return $this->router->renderView("login");
+            }
         }
-
     }
-
-
 
     public function validation($data)
     {

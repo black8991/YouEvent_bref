@@ -13,15 +13,9 @@ use app\core\Application;
 
     $app->router->get('/',[UserController::class, 'showData']);
 
-
-
-
-
     $app->router->post('/details', [UserController::class, 'showDetails']);
 
-
     // $app->router->get('/details', 'details');
-
 
     // auth routers
     $app->router->get('/register','register');

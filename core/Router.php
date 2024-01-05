@@ -101,4 +101,11 @@ class Router
         return ob_get_clean();
     }
 
+
+    public function redirect($path)
+    {
+         header("location: $path");
+         exit();
+    }
+
 }
