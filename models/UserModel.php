@@ -50,7 +50,6 @@ class UserModel
             e.id_event = 1;
     ");
 
-    
         $stmt->execute();
         $users = $stmt->fetch(\PDO::FETCH_OBJ); 
         

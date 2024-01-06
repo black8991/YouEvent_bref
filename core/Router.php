@@ -61,13 +61,12 @@ class Router
 
                 $id = $this->extractIdFromPath($path);
                 return call_user_func([$controller, $method]);
-
             }
         
             return call_user_func($callback);
         }
         
-        // Handle the case when the route is not found
+        // Handle the case when the route is not foundnx   
         return $this->renderView(404);
     }
 
