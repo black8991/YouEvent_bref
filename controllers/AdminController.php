@@ -22,8 +22,11 @@ class AdminController{
         return $this->router->renderView("dashboardadmin", ['data' => $data]);
     }
     public function supprimer(){
-        $test = $this->objmodel->delete("users", ':id');
+        $id = $_POST['id_user'];
+        $test = $this->objmodel->delete("users", $id);
+
     }
+    
     
 
 }

@@ -1,6 +1,6 @@
 
     <div class="ms-3 mb-3">
-        <button type="button" class="btn btn-dark p-3 ">Les statistiques et les rapports globaux de l'application :</button>
+        <button type="button" class="btn btn-dark p-3 mb-3 mt-3 ">Les statistiques et les rapports globaux de l'application :</button>
     </div>
     <div class="d-flex w-100 justify-content-evenly mb-3">
         <div class="bg-dark text-light p-5 fw-bold text-start">Nombre des tickets vendus:</div>
@@ -35,11 +35,11 @@
         <td><?= $user['phone'] ?></td>
         <td><?= $user['id_role'] ?></td>
         <td>
-        
-        <a ><i class="fa-solid fa-pen text-dark"></i></a>
-        <form action="">
-        <a href=""><i class="fa-solid fa-trash text-dark me-3"></i></a> </form>
-
+        <a href=""><button class="btn btn-sm btn-outline-success mb-4">Update</button></i></a>
+        <form method="post" action="delete" style="display: inline-block">
+                    <input  type="hidden" name="id_user" value="<?=$user['id_user']?>"/>
+                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                </form>
         </td>
 
     
