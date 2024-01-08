@@ -60,13 +60,13 @@ class Router
                 $method = $callback[1];
 
                 $id = $this->extractIdFromPath($path);
-                return call_user_func([$controller, $method], $id);
+                return call_user_func([$controller, $method]);
             }
         
             return call_user_func($callback);
         }
         
-        // Handle the case when the route is not found
+        // Handle the case when the route is not foundnx   
         return $this->renderView(404);
     }
 
@@ -98,6 +98,13 @@ class Router
         ob_start();
         require_once Application::$ROOT_DIR."/views/layout/main.php";
         return ob_get_clean();
+    }
+
+
+    public function redirect($path)
+    {
+         header("location: $path");
+         exit();
     }
 
 }

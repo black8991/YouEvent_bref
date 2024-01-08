@@ -9,7 +9,7 @@ class UserModel
     public string $email =  '';
     public string $phone = '';
     public string $password = '';
-    private Database $database;
+    protected Database $database;
     public function __construct()
     {
         $this->database = new Database();
@@ -50,7 +50,6 @@ class UserModel
             e.id_event = 1;
     ");
 
-    
         $stmt->execute();
         $users = $stmt->fetch(\PDO::FETCH_OBJ); 
         

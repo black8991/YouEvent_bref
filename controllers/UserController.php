@@ -23,9 +23,11 @@ class UserController
         $this->userModel = new userModel();
     }
 
+
+
+
     public function showData()
     {
-
         $users = $this->userModel->getUsers();
         if ($users) {
             return $this->router->renderView("home", ['users' => $users]);

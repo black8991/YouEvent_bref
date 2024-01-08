@@ -11,9 +11,8 @@
 
 
 
-            <form method="post" >
+            <form method="post"  >
                 <div class="row">
-
                     <input type="hidden" name="type" value="register">
                     <div class="input-group col-lg-6 mb-4">
                         <div class="input-group-prepend">
