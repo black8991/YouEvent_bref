@@ -13,10 +13,24 @@ use app\core\Application;
 
     $app->router->get('/',[UserController::class, 'showData']);
 
+
+    // $app->router->get('/login', 'login');
+    // $app->router->get('/details', [new AutentificationController, 'showDetails']);
+    // // $app->router->get('/details', 'details');
+
+    // $app->router->get('/register','register');
+    // $app->router->post('/register', [new AutentificationController ,'register']);
+
+    $app ->router->post('/admin', [AdminController::class, 'admin']);
+    $app ->router->get('/admin', [AdminController::class, 'admin']);
+    $app ->router->post('/delete', [AdminController::class, 'supprimer']);
+    $app ->router->get('/delete', [AdminController::class, 'supprimer']);
+
     $app->router->post('/details', [UserController::class, 'showDetails']);
 
 
     // $app->router->get('/details', 'details');
+
 
 
     // auth routers

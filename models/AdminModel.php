@@ -17,15 +17,17 @@ class AdminModel {
         $data = $showrequete->fetchAll();
         return $data;
  }
-     public function delete($table, $condition){
-        $deleterequete= $this->conndb->prepare("DELETE FROM {$table} WHERE {$condition}");
+     public function delete($table, $id_user){
+        $deleterequete= $this->database->prepare("DELETE FROM `{$table}` WHERE id_user= '$id_user' ");
+        // var_dump($deleterequete);
+        // // die();
         $deleterequete->execute();
      }
 
      public function insert($table, $attributes, $values){
         $arrtimploded= implode(",",$attributes );
         $valuesimploded= implode(",",$values);
-        $insertrequete= $this->conndb->prepare("INSERT INTO {$table}{$arrtimploded} VALUES {$valuesimploded}");
+        $insertrequete= $this->database->prepare("INSERT INTO {$table}{$arrtimploded} VALUES {$valuesimploded}");
         $insertrequete->execute();
      }
     

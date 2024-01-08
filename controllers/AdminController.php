@@ -7,21 +7,27 @@ use  app\core\Request;
 use PDO;
 
 class AdminController{
-    private AdminModel $admin_controller;
+    private AdminModel $objmodel;
     private Router $router;
 
 
     public function __construct(){
         $request = new Request();
-        $this->admin_controller= new AdminModel;
+        $this->objmodel= new AdminModel;
         $this->router = new Router($request);
         
     }
     public function admin(){
-        $data = $this->admin_controller->showUsers("users");
+        $data = $this->objmodel->showUsers("users");
         return $this->router->renderView("dashboardadmin", ['data' => $data]);
     }
+    public function supprimer(){
+        $id = $_POST['id_user'];
+        $test = $this->objmodel->delete("users", $id);
 
+    }
+    
+    
 
 }
 
