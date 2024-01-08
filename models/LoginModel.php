@@ -5,9 +5,12 @@ use app\core\Application;
  use app\models\UserModel;
 
 class LoginModel extends UserModel {
-   //regester
+
+
     public function creatAcount($fullName, $email,$phone,$password)
     {
+
+
         $sql = "INSERT INTO `users` (`fullName`,`email`,`phone`,`password`) VALUES (?, ?, ?, ?)";
         $conn = $this->database;
     
@@ -29,12 +32,10 @@ class LoginModel extends UserModel {
 //login
     public function findAcount($email,$password)
     {
-        $sql = "SELECT * from users where email=?";
+        $sql = "SELECT * from users where email= '{$email}'";
         $conn = $this->database;
         try {
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(1, $email, \PDO::PARAM_STR);
-            $stmt->bindParam(2, $password, \PDO::PARAM_STR);
             $stmt->execute();
             $user = $stmt->fetch(\PDO::FETCH_ASSOC);
 

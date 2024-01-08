@@ -13,10 +13,6 @@ use app\core\Application;
 
     $app->router->get('/',[UserController::class, 'showData']);
 
-
-
-
-
     $app->router->post('/details', [UserController::class, 'showDetails']);
 
 
